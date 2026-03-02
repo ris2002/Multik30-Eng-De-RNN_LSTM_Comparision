@@ -20,8 +20,10 @@ spaCy is a fast, production-ready Python library for Natural Language Processing
 It helps computers understand and analyze text.
 Think of it like a toolkit that converts raw text into structured data that your application can use.
 It is mainly used to tokenise the text and for linguistic analysis.
+Two separate tokenisers are used — en_core_web_sm for English and de_core_news_sm for German.
 ### Torchtext Vocabulary 
 Torchtext is part of pytorch library, what it does is it assigns IDs to the tokenized text before passing it to the embedding layer of the RNN/LSTM.
+Four special tokens are added to each vocabulary: <unk> for unknown words, <pad> for padding sequences to equal length, <sos> for start of sentence, and <eos> for end of sentence.
 ### Data Loading
 ## Evaluation Metric
 ## Brief Concepts of LSTMs
