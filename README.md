@@ -16,7 +16,12 @@ This is my 11th project. This project will be done in a similar style to my 9th 
 * We remove the white spaces, using strip().
 * German special characters (ä, ö, ü, ß, Ä, Ö, Ü) are preserved during cleaning.
 ### Spacy Tokenisation
+spaCy is a fast, production-ready Python library for Natural Language Processing (NLP).
+It helps computers understand and analyze text.
+Think of it like a toolkit that converts raw text into structured data that your application can use.
+It is mainly used to tokenise the text and for linguistic analysis.
 ### Torchtext Vocabulary 
+Torchtext is part of pytorch library, what it does is it assigns IDs to the tokenized text before passing it to the embedding layer of the RNN/LSTM.
 ### Data Loading
 ## Evaluation Metric
 ## Brief Concepts of LSTMs
