@@ -21,10 +21,20 @@ It helps computers understand and analyze text.
 Think of it like a toolkit that converts raw text into structured data that your application can use.
 It is mainly used to tokenise the text and for linguistic analysis.
 Two separate tokenisers are used — en_core_web_sm for English and de_core_news_sm for German.
-### Torchtext Vocabulary 
-Torchtext is part of pytorch library, what it does is it assigns IDs to the tokenized text before passing it to the embedding layer of the RNN/LSTM.
-Four special tokens are added to each vocabulary: <unk> for unknown words, <pad> for padding sequences to equal length, <sos> for start of sentence, and <eos> for end of sentence.
-### Data Loading
+### Vocabulary
+It is a dictionary of words stored, and all words are unique. Previously,  a vocabulary was created using torchtext, the current industry standard, which uses Hugging Face Transformers. In this project, it was manually created using Counter
+
+## Seq2Seq Architecture Components
+A quick breakdown of the core pillars used in Neural Machine Translation and LLMs.
+### 1. Encoder
+**The "Reader"**  
+The **Encoder** processes the raw input sequence (like an English sentence) and converts it into a series of mathematical representations. It scans the input token by token, updating its internal state to capture the meaning, order, and relationship between words.
+### 2. Context Vector
+**The "Bridge"**  
+The **Context Vector** is a fixed-size numerical summary of the entire input sequence. It acts as the final output of the Encoder and the starting point for the Decoder. Think of it as a "compressed thought" that contains all the essential information needed to generate a response.
+### 3. Decoder
+**The "Writer"**  
+The **Decoder** takes the Context Vector and unfolds it into a new sequence (like a Spanish translation). It generates the output one step at a time, using the information from the context vector and its own previously generated words to predict what comes next.
 ## Evaluation Metric
 ## Brief Concepts of LSTMs
 ## Hypothesis Formulation
