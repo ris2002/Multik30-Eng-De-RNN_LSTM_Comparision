@@ -1,9 +1,9 @@
 # Multi30k(Eng-De)_Dataset_RNN_LSTM
-This is my 11th project. This project will be done in a similar style to my 9th project (https://github.com/ris2002/Adult-Census-Income-MLE-NN). I am only going to involve RNN and LSTM, as I am learning those techniques to apply them to sequence-to-sequence  tasks. For each technique, I will run 30 experiments (15 runs each).
+This is my 11th project. In this project, I plan to construct a seq to seq models using LSTMs and Vanilla RNN and show the difference in performance between them.
 ## Problem Analysis
 * Type-Sequence-to-Sequence Prediction
-* Business Goal - The business goal is to identify and translate English sentences into German.
-* LSTM/RNN Objective - It needs to get an overall BLEU score of around 30.
+* Business Goal - The business goal is to identify and translate English sentences into German using LSTMs and Vanilla RNNs and compare the performance difference in their base configuration.
+* LSTM/RNN Objective - LSTMs needs to be better at performance in their base configurations.
 ## Dataset Overview
 * The dataset was exported from Hugging Face (https://huggingface.co/datasets/bentrevett/multi30k). It consists of 31,014 rows of English and German sentences; that is the only column. Each item in the dataset is a tuple of (English sentence, German sentence), so there is no need to convert it into a dataframe.
 * Train_data=29000 rows
@@ -38,6 +38,7 @@ The **Decoder** takes the Context Vector and unfolds it into a new sequence (lik
 ## Evaluation Metric
 ## Brief Concepts of LSTMs
 ## Hypothesis Formulation
+Null Hypothesis - The LSTM translation model is much better than the vanilla RNN in its base configuration.
 ## Experimentations
 ### Vanilla RNNS (15 Runs)
 ### LSTMS (15 Runs)
