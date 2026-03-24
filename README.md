@@ -2,8 +2,8 @@
 This is my 11th project. In this project, I plan to construct a seq to seq models using LSTMs and Vanilla RNN and show the difference in performance between them.
 ## Problem Analysis
 * Type-Sequence-to-Sequence Prediction
-* Business Goal - The business goal is to identify and translate English sentences into German using LSTMs and Vanilla RNNs and compare the performance difference between them using the same hyperparameters. Maximum Number of runs-10
-* LSTM/RNN Objective - LSTMs need to be better at performance in most of the runs.
+* Business Goal - The business goal is to identify and translate English sentences into German using LSTMs and Vanilla RNNs and compare the performance difference between them using the same baseline hyperparameters. There will be 1 run for each of the architecture due to time and resource connstraint
+* LSTM/RNN Objective - LSTMs need to perform better than RNN in the baseline trim, which proves that LSTMs are better experimentally.
 ## Dataset Overview
 * The dataset was exported from Hugging Face (https://huggingface.co/datasets/bentrevett/multi30k). It consists of 31,014 rows of English and German sentences; that is the only column. Each item in the dataset is a tuple of (English sentence, German sentence), so there is no need to convert it into a dataframe.
 * Train_data=29000 rows
@@ -56,12 +56,38 @@ The **Context Vector** is a fixed-size numerical summary of the entire input seq
 The **Decoder** takes the Context Vector and unfolds it into a new sequence (like a Spanish translation). It generates the output one step at a time, using the information from the context vector and its own previously generated words to predict what comes next.
 ## Evaluation Metric
 ### BLEU
-## Brief Concepts of LSTMs
+* It measures how similar the predicted translation results are to the actual translation.
+     * 0-10 Useless
+     * 10-20 Hard to understand
+     * 20-30 Understandable
+     * 30++ Very Good 
+
 ## Hypothesis Formulation
-Null Hypothesis - The LSTM translation model is much better than the vanilla RNN in most of the runs, using comparable hyperparameters.
+Null Hypothesis - LSTM and RNN perform similarly
+Alternative     - LSTM performs better than RNN
 ## Experimentations
-### Vanilla RNNS (10 Runs)
-### LSTMS (10 Runs)
+### Hyper Parameters
+* INPUT_FEATURES    = 128, I wanted to keep it as low and simple as possible, but not too low
+* OUTPUT_FEATURES   = 128
+* INPUT_NEURONS     = 128, I wanted to keep it as low and simple as possible, but not too low
+* OUTPUT_NEURONS    = 128
+* NUM_LAYERS        = 1, didn't want to complicate, and increasing the number of layers might reduce the overall BLEU score for both the architectures 
+* NUM_DROPOUT       = 0, wanted to compare both the architectures in their baseline trim
+* NUM_EPOCHS        = 100, not too low or high, which might cause overfitting
+* BATCH_SIZE        = 128, felt for 29k senntences 128 was optimum
+* LEARNING_RATE     = 0.001
+#### Scores
+* Vanilla RNN- BLEU Score- 0.0944, Total Params-2,830,211
+* LSTM - BLEU Score- 0.1422, Total Params-3,028,355
+## Result
+Alternative Hypothesis is accpeted 
+## Conclusion 
+Even though the BLEU score of LSTM(0.1422) is low, its 50% better than Vanilla RNN
+## What I Learned
+- Built seq2seq from scratch
+- Understood why LSTM outperforms RNN
+- Understood vanishing gradients mathematically
+
 
 
 
