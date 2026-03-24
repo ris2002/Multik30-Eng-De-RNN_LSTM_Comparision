@@ -82,7 +82,7 @@ Alternative     - LSTM performs better than RNN
 ## Result
 Alternative Hypothesis is accpeted 
 ## Conclusion 
-Even though the BLEU score of LSTM(0.1422) is low, its 50% better than Vanilla RNN
+Even though the BLEU score of LSTM(0.1422) is low, its 50% better than Vanilla RNN, the low score was expected as there were lack of more experimenta;l runs due to time and resource constraint. My next project will be a add on to this project where in I try try to acheive a BLEU score of atleast in the range of 25-30 using LSTM as this experiment has proven that they are much better than Vanilla RNNs. 
 ## What I Learned
 - Built seq2seq from scratch
 - Understood why LSTM outperforms RNN
