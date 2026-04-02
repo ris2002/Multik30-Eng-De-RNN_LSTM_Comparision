@@ -89,6 +89,13 @@ With only 1 run per architecture due to time and resource constraints,
 this result is not sufficient to generalise. My next project will explore 
 attention-based LSTMs and longer training runs to give LSTM a fair chance 
 to outperform RNN, targeting a BLEU score in the range of 25-30.
+Despite underperforming in this run, LSTM remains the chosen architecture 
+for the next project as the gating mechanism (forget, input, output gates) 
+gives it a structural advantage in retaining long-range dependencies — 
+something a Vanilla RNN cannot do due to vanishing gradients. The result 
+here is attributed to insufficient training epochs rather than architectural 
+inferiority. With longer training and attention, LSTM is expected to show 
+its true capability
 ## What I Learned
 - Built seq2seq from scratch
 - Understood why LSTM outperforms RNN
