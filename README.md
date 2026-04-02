@@ -77,12 +77,18 @@ Alternative     - LSTM performs better than RNN
 * BATCH_SIZE        = 128, felt for 29k senntences 128 was optimum
 * LEARNING_RATE     = 0.001
 #### Scores
-* Vanilla RNN- BLEU Score- 0.0944, Total Params-2,830,211
-* LSTM - BLEU Score- 0.1422, Total Params-3,028,355
+Vanilla RNN - BLEU Score: 0.05, Total Params - 2,830,211
+LSTM        - BLEU Score: 0.02, Total Params - 3,028,355
 ## Result
-Alternative Hypothesis is accpeted 
+Null Hypothesis is accpeted 
 ## Conclusion 
-Even though the BLEU score of LSTM(0.1422) is low, its 50% better than Vanilla RNN, the low score was expected as there were lack of more experimenta;l runs due to time and resource constraint. My next project will be a add on to this project where in I try try to acheive a BLEU score of atleast in the range of 25-30 using LSTM as this experiment has proven that they are much better than Vanilla RNNs. 
+The LSTM underperformed RNN (0.02 vs 0.05) in this baseline run. 
+This is likely due to LSTM having more parameters (3M vs 2.8M) 
+and requiring more epochs to converge on a dataset of this size. 
+With only 1 run per architecture due to time and resource constraints, 
+this result is not sufficient to generalise. My next project will explore 
+attention-based LSTMs and longer training runs to give LSTM a fair chance 
+to outperform RNN, targeting a BLEU score in the range of 25-30.
 ## What I Learned
 - Built seq2seq from scratch
 - Understood why LSTM outperforms RNN
